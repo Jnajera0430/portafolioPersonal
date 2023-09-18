@@ -14,7 +14,7 @@ export const listTech: ITech[] = [
     },
     {
         name: '',
-        src: 'https://img.shields.io/badge/redux js-%2320232a.svg?style=for-the-badge&logo=redux&logoColor=green'
+        src: 'https://img.shields.io/badge/redux js-%2320232a.svg?style=for-the-badge&logo=redux&logoColor=%2361DAFB'
     },
     {
         name: '',
@@ -26,7 +26,7 @@ export const listTech: ITech[] = [
     },
     {
         name: '',
-        src: 'https://img.shields.io/badge/.NET CORE WebApi-%2320232a.svg?style=for-the-badge&logo=.NET&logoColor=blue'
+        src: 'https://img.shields.io/badge/.NET CORE WebApi-%2320232a.svg?style=for-the-badge&logo=.NET&logoColor=%2361DAFB'
     },
     {
         name: '',
@@ -46,7 +46,7 @@ export const listTech: ITech[] = [
     },
     {
         name: '',
-        src: 'https://img.shields.io/badge/mysql-%2320232a.svg?style=for-the-badge&logo=mysql&logoColor=white'
+        src: 'https://img.shields.io/badge/mysql-%2320232a.svg?style=for-the-badge&logo=mysql&logoColor=%2361DAFB'
     },
     {
         name: '',

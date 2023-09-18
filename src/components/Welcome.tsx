@@ -12,7 +12,7 @@ export const WelcomeComponet = () => (
                 </p>
             </div>
             <div className="w-1/5 h-auto">
-                <img src={welcomeImg} alt="" className="w-full h-full" />
+                <img src={welcomeImg} alt="Imagen obtenida de https://storyset.com/" className="w-full h-full" />
             </div>
         </div>
     </section>

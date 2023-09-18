@@ -1,17 +1,22 @@
 export interface INavbar {
-    item: string
+    item: string,
+    src:string
 }
 export const navbarConstant: INavbar[] = [
     {
-        item: 'Inicio'
+        item: 'Inicio',
+        src:'#welcome'
     },
     {
-        item: 'Perfil'
+        item: 'Perfil',
+        src: '#about'
     },
     {
-        item: 'Experiencia'
+        item: 'Experiencia',
+        src: '#experence'
     },
     {
-        item: 'Contacto'
+        item: 'Contacto',
+        src: '#contact'
     },
 ]

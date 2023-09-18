@@ -3,7 +3,7 @@ import { WelcomeComponet } from './components/Welcome'
 import { AboutComponent } from './components/About'
 import { ExperenceComponent } from './components/Experence'
 import { Navbar } from './components/NavBar'
-
+import './index.css'
 function App() {
 
   return (
@@ -12,16 +12,16 @@ function App() {
         <div>
           <Navbar/>
         </div>
-        <div>
+        <div id='welcome'>
           <WelcomeComponet/>
         </div>
-        <div>
+        <div id='about'>
           <AboutComponent/>
         </div>
-        <div>
+        <div id='experence'>
           <ExperenceComponent/>
         </div>
-        <div>
+        <div id='contact'>
           <ContactComponent/>
         </div>
       </div>
