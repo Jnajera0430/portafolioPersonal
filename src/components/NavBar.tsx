@@ -1,5 +1,5 @@
 import { UseContext } from '../api/hook/UseContext';
-import avatarImg from '../assets/img/Robot face-rafiki.svg';
+import avatarImg from '../assets/img/Robot.svg';
 import { navbarConstant } from '../constants/navbar.constant';
 import { ItemNavbarMiniComponent } from '../miniComponent/ListNavbar.mini';
 import moonDark from '../assets/img/moondark.png';
