@@ -4,10 +4,8 @@ import App from './App.tsx'
 import './index.css'
 import { ContextProvider } from './api/ContextProvider.tsx'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-  </React.StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')!).render( 
+  <ContextProvider>
+    <App />
+  </ContextProvider>
 )
