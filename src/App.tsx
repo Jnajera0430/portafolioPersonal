@@ -4,11 +4,11 @@ import { AboutComponent } from './components/About'
 import { ExperenceComponent } from './components/Experence'
 import { Navbar } from './components/NavBar'
 import './index.css'
-//import { ContextProvider } from './api/ContextProvider'
 
 function App() {
+  
   return (
-    <div>
+    <div >
       <div>
         <Navbar />
       </div>

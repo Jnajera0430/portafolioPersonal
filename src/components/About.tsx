@@ -1,27 +1,30 @@
 import perfilImg from '../assets/img/perfil.jpg';
 import flagColombia from '../assets/img/flagColombia.png';
+import flagColombiaDark from '../assets/img/flagColombiaDark2.png';
 import devImg from '../assets/img/Addcolorrafiki.png';
 import { listTech } from '../constants/tecnologies.constant';
 import { ListTechComponent } from '../miniComponent/ListTech.mini';
-export const AboutComponent = () => (
-    <section className="text-gray-600 body-font">
+import { UseContext } from '../api/hook/UseContext';
+export const AboutComponent = () => {
+    const {darkMode} = UseContext();
+    return <section className={`${darkMode ? "bg-gray-800 text-slate-400" :" text-gray-600 "} body-font`}>
         <div className="container flex flex-wrap px-5 py-24 mx-auto items-center justify-center">
             <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200 flex">
                 <div className='w-3/5'>
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Acerca de mi</h1>
+                    <h1 className={`${darkMode ? " text-slate-300" :" text-gray-900"}  sm:text-3xl text-2xl font-medium title-font mb-2 `}>Acerca de mi</h1>
                     <div className=''>
                         <div className="mt-3 flex -space-x-2 overflow-hidden w-40">
-                            <img src={perfilImg} alt="" className="h-full w-full inline-block rounded-full ring-2 ring-white" />
+                            <img src={perfilImg} alt="" className="h-full w-full inline-block rounded-full ring-inset ring-white" />
                         </div>
                         <div>
-                            <h3 className='text-xl text-gray-900'>Jose Najera Avendaño</h3>
+                            <h3 className={`${darkMode ? " text-slate-300" :" text-gray-900"} text-xl`}>Jose Najera Avendaño</h3>
                             <p className='-mt-1 text-sm'>Desarrollador fullstack</p>
                             <div className='flex flex-row items-center'>
                                 <div className='min-w-fit inline-flex'>
                                     <p className='-mt-1 text-sm'>Barranquilla - Colombia </p>
                                 </div>
-                                <div className='w-fit h-8'>
-                                    <img src={flagColombia} alt="Bandera de Colombia" className='h-full w-full' />
+                                <div className={`w-fit h-8 rounded-md `}>
+                                    <img src={darkMode? flagColombiaDark : flagColombia} alt="Bandera de Colombia" className='h-full w-full  rounded-full bg-none' />
                                 </div>
                             </div>
                         </div>
@@ -50,4 +53,4 @@ export const AboutComponent = () => (
             </div>
         </div>
     </section>
-);
+}

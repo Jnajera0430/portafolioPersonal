@@ -6,14 +6,9 @@ export default {
     './pages/**/*.{html,js}',
     './components/**/*.{html,js}',
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      backgroundColor: {
-        'dark': '#333', // Fondo para el modo oscuro
-      },
-      textColor: {
-        'dark': '#fff', // Texto para el modo oscuro
-      },
     },
   },
   plugins: [],

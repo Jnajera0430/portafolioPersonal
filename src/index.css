@@ -5,3 +5,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+#dark {
+  background: '#333';
+  color: '#fff';
+}

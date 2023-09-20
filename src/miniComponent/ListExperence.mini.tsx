@@ -1,7 +1,9 @@
+import { UseContext } from "../api/hook/UseContext";
 import { Experence, linkEnum } from "../constants/experence.constante";
 
-export const ExperenceMiniComponent = ({ title, description, technologies, src, link, credit }: Experence) => (
-    <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-300 border-opacity-60 mb-1">
+export const ExperenceMiniComponent = ({ title, description, technologies, src, link, credit }: Experence) => {
+    const { darkMode } = UseContext()
+    return <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-300 border-opacity-60 mb-1">
         <div className="h-20 w-full">
             <iframe src={src ? src : ''} className="w-full h-full" allowFullScreen>
             </iframe>
@@ -14,7 +16,7 @@ export const ExperenceMiniComponent = ({ title, description, technologies, src, 
             </p>
         </div>
         <div className="pt-4">
-            <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-1">{title}</h2>
+            <h2 className={`text-lg sm:text-xl ${darkMode ? " text-slate-300" : " text-gray-900"}  font-medium title-font mb-1`}>{title}</h2>
             <p className="leading-relaxed text-base mb-2">{description}</p>
             <h3 className="font-medium">Tecnologias: </h3>
             <p>
@@ -28,4 +30,4 @@ export const ExperenceMiniComponent = ({ title, description, technologies, src, 
             </div>
         </div>
     </div>
-)
+}
