@@ -17,8 +17,10 @@ export const ContextProvider = (props: PropsWithChildren) => {
         if (data !== null){
             const theme:boolean = JSON.parse(data);
             setDarkMode(!theme);
+            return;
         }
-    }
+        localStorage.setItem(itemTheme, JSON.stringify(!darkMode))
+    }   
 
     useEffect(() => {
          localStorage.setItem(itemTheme, JSON.stringify(darkMode))

@@ -5,7 +5,7 @@ import { ExperenceMiniComponent } from "../miniComponent/ListExperence.mini";
 export const ExperenceComponent = () =>{
     const {darkMode} = UseContext();
     return <section className={`${darkMode ? "bg-gray-800 text-slate-400" :"text-gray-600"}  body-font`}>
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 pt-9 mx-auto">
             <div className="flex flex-col text-center w-full mb-20">
                 <h1 className={`sm:text-3xl text-3xl font-medium title-font mb-4 ${darkMode ? " text-slate-300" :" text-gray-900"} `}>Experiencia</h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-2xl">

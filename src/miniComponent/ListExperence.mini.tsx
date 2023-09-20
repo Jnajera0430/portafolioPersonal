@@ -3,7 +3,7 @@ import { Experence, linkEnum } from "../constants/experence.constante";
 
 export const ExperenceMiniComponent = ({ title, description, technologies, src, link, credit }: Experence) => {
     const { darkMode } = UseContext()
-    return <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-300 border-opacity-60 mb-1">
+    return <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 pt-6 border-l-2 border-gray-300 border-opacity-60 mb-1">
         <div className="h-20 w-full">
             <iframe src={src ? src : ''} className="w-full h-full" allowFullScreen>
             </iframe>

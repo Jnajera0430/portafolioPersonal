@@ -4,7 +4,7 @@ import welcomeImg from '../assets/img/Programming-rafiki.svg';
 export const WelcomeComponet = () => {
     const {darkMode} = UseContext();
     return <section className={`${darkMode ? "bg-gray-800 text-slate-400" :" text-gray-600"}  body-font`}>
-        <div className="container px-5 py-24 mx-auto flex justify-center items-center">
+        <div className="container px-5 pt-24 - mx-auto flex justify-center items-center">
             <div className="w-3/5 h-auto ">
                 <h1 className={`${darkMode ? " text-slate-300" :" text-gray-900"} text-5xl mb-2 `}>
                     Bienvenidos

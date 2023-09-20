@@ -8,9 +8,9 @@ import { UseContext } from '../api/hook/UseContext';
 export const AboutComponent = () => {
     const {darkMode} = UseContext();
     return <section className={`${darkMode ? "bg-gray-800 text-slate-400" :" text-gray-600 "} body-font`}>
-        <div className="container flex flex-wrap px-5 py-24 mx-auto items-center justify-center">
+        <div className="container flex flex-wrap px-5 pt-5 mx-auto items-center justify-center">
             <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200 flex">
-                <div className='w-3/5'>
+                <div className='xl:w-3/5 md:w-3/5'>
                     <h1 className={`${darkMode ? " text-slate-300" :" text-gray-900"}  sm:text-3xl text-2xl font-medium title-font mb-2 `}>Acerca de mi</h1>
                     <div className=''>
                         <div className="mt-3 flex -space-x-2 overflow-hidden w-40">
@@ -30,7 +30,7 @@ export const AboutComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-2/3'>
+                <div className='xl:w-2/3 md:w-2/3 hidden sm:block'>
                     <img src={devImg} className='w-full h-full' alt="Imagen obtenida de https://storyset.com/" />
                 </div>
             </div>
@@ -41,10 +41,11 @@ export const AboutComponent = () => {
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                 </a> */}
-            <div className="flex flex-col md:w-1/2 md:pl-12">
-                <h2 className="title-font font-semibold text-gray-800 tracking-wider text-sm mb-3">TECNOLOGIAS - CONOCIMIENTOS</h2>
-                <nav className="flex flex-wrap list-none -mb-1">
-                    {
+            <div className="flex flex-col md:w-1/2 md:pl-12 justify-center items-center">
+                <h2 className={`title-font font-semibold ${darkMode ? " text-slate-300" :" text-gray-900"} tracking-wider text-sm mb-3`}>TECNOLOGIAS - CONOCIMIENTOS</h2>
+                <nav className="flex flex-wrap list-none -mb-1 items-center justify-center">
+                    {   
+                        
                         listTech.map((item, i) => (
                             <ListTechComponent name={item.name} src={item.src} description={item.description} key={i} />
                         ))
