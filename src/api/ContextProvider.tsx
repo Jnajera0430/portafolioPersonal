@@ -8,7 +8,7 @@ export interface IContext {
 const data =  localStorage.getItem(itemTheme);
 export const Context = createContext<IContext | null>({
     darkMode: null,
-    handleChangeTheme:()=>{}
+    handleChangeTheme:()=>{},
 });
 export const ContextProvider = (props: PropsWithChildren) => {
     const [darkMode, setDarkMode] = useState(data !== null ? JSON.parse(data): false)
