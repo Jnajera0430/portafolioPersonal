@@ -1,4 +1,5 @@
 export enum TypeAlert{
     DANGER = "danger",
-    SUCCESS = "success"
+    SUCCESS = "success",
+    NEUTRO = "neutro"
 }

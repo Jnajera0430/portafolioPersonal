@@ -5,11 +5,11 @@ import { ValidEmail } from "../constants/validEmail";
 import { TypeAlert } from "../constants/alertEnum";
 
 export const ContactComponent = () => {
+    const { darkMode, handleTypeAlert, handleIsOpen } = UseContext();
     const [stateMessage, setStateMessage] = useState<IMessage>({
         email: '',
         message: ''
     });
-    const { darkMode, handleTypeAlert } = UseContext();
     const handleFields = (e: ChangeEvent<HTMLInputElement>) => {
         setStateMessage((state) => ({
             ...state,
@@ -19,12 +19,13 @@ export const ContactComponent = () => {
     const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.target as HTMLFormElement;
-        if (!stateMessage.email || !ValidEmail(stateMessage.email) || stateMessage.message.length < 5) {
+        handleIsOpen(true);
+        if (!stateMessage.email || !ValidEmail(stateMessage.email)) {
             handleTypeAlert(TypeAlert.DANGER);
             return;
-        }
+        }        
         handleTypeAlert(TypeAlert.SUCCESS);
-        form.reset();
+        form.reset();   
     }
     return <section className={`text-gray-600 body-font relative`}>
         <div className={`absolute inset-0 ${darkMode ? " bg-gray-800" : " bg-gray-300 "}`}>
@@ -36,14 +37,14 @@ export const ContactComponent = () => {
                     Dejame tu mensaje
                 </h2>
                 <p className={`leading-relaxed mb-5 `}>
-                    Enviame un mensaje con Recomendaciones y/o para solicitar mis servicios.
+                    Enviame un mensaje si quieres solicitar mis servicios o si gustas enviame tus recomendaciones.
                 </p>
                 <div className="relative mb-4">
-                    <label htmlFor="email" className="leading-7 text-sm ">Email</label>
-                    <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handleFields} />
+                    <label htmlFor="email" className={`leading-7 text-sm font-bold ${darkMode ? " text-slate-300 " : " text-gray-600 "}`}>Email</label>
+                    <input type="text" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" onChange={handleFields} />
                 </div>
                 <div className="relative mb-4">
-                    <label htmlFor="message" className="leading-7 text-sm ">Message</label>
+                    <label htmlFor="message" className={`leading-7 text-sm font-bold ${darkMode ? " text-slate-300 " : " text-gray-600 "}`}>Message</label>
                     <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                 </div>
                 <button className="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Enviar</button>
