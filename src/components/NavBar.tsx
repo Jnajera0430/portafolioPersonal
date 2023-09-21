@@ -11,10 +11,7 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const handleToggelMenu = () => {
         setMenuOpen(!menuOpen);
-
-
     }
-    console.log(menuOpen);
     const handleTheme = () => {
         handleChangeTheme();
     }
@@ -54,7 +51,7 @@ export const Navbar = () => {
                     ☰
                 </button>
 
-                {menuOpen && (<nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+                {menuOpen && (<nav className="md:hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                     {
                         navbarConstant.map((itemNavbar, i) => (
                             <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} />

@@ -4,9 +4,12 @@ import { AboutComponent } from './components/About'
 import { ExperenceComponent } from './components/Experence'
 import { Navbar } from './components/NavBar'
 import './index.css'
-
+import { UseContext } from './api/hook/UseContext'
+import { TypeAlert } from './constants/alertEnum'
+import { SucessAlert } from './miniComponent/SuccessAlert.mini'
+import { DangerAlert } from './miniComponent/DangerAlert.mini'
 function App() {
-  
+  const {typeAlert} = UseContext()
   return (
     <div >
       <div>
@@ -24,6 +27,16 @@ function App() {
       <div id='contact'>
         <ContactComponent />
       </div>
+      {
+        typeAlert == TypeAlert.SUCCESS && typeAlert &&(
+          <SucessAlert/>
+        )
+      }
+      {
+        typeAlert == TypeAlert.DANGER && typeAlert &&(
+          <DangerAlert/>
+        )
+      }
     </div>
   )
 }
