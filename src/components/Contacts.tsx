@@ -16,16 +16,20 @@ export const ContactComponent = () => {
             [e.target.name]: e.target.value
         }));
     }
-    const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.target as HTMLFormElement;
         handleIsOpen(true);
-        if (!stateMessage.email || !ValidEmail(stateMessage.email)) {
+        if (!stateMessage.email || !stateMessage.message || !ValidEmail(stateMessage.email)) {
             handleTypeAlert(TypeAlert.DANGER);
             return;
-        }        
+        }
         handleTypeAlert(TypeAlert.SUCCESS);
-        form.reset();   
+        setStateMessage({
+            email: "",
+            message: ""
+        });
+        form.reset();
     }
     return <section className={`text-gray-600 body-font relative`}>
         <div className={`absolute inset-0 ${darkMode ? " bg-gray-800" : " bg-gray-300 "}`}>
