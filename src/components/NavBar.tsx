@@ -2,10 +2,13 @@ import { UseContext } from '../api/hook/UseContext';
 import avatarImg from '../assets/img/Robot.svg';
 import { navbarConstant } from '../constants/navbar.constant';
 import { ItemNavbarMiniComponent } from '../miniComponent/ListNavbar.mini';
-import moonDark from '../assets/img/moondark.png';
-import moonLight from '../assets/img/moonlight.png';
+//import moonDark from '../assets/img/moondark.png';
+//import moonLight from '../assets/img/moonlight.png';
 import { useState } from 'react';
 import { ThemeIconMiniComponent } from '../miniComponent/Theme.mini';
+import { MdDarkMode } from 'react-icons/md'
+import { BsSun } from 'react-icons/bs'
+import { ItemNavbarMiniComponentDesk } from '../miniComponent/NavbarDesk.mini';
 export const Navbar = () => {
     const { handleChangeTheme, darkMode } = UseContext();
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -32,14 +35,14 @@ export const Navbar = () => {
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                         {
                             navbarConstant.map((itemNavbar, i) => (
-                                <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} />
+                                <ItemNavbarMiniComponentDesk item={itemNavbar.item} src={itemNavbar.src} key={i} Icon={itemNavbar.Icon} />
                             ))
                         }
                         <button onClick={handleTheme}>
                             {!darkMode ?
-                                <ThemeIconMiniComponent theme='Dark mode' themeIcon={moonDark} />
+                                <ThemeIconMiniComponent theme='Dark mode' ThemeIcon={MdDarkMode} />
                                 :
-                                <ThemeIconMiniComponent theme='Light mode' themeIcon={moonLight} />
+                                <ThemeIconMiniComponent theme='Light mode' ThemeIcon={BsSun} />
                             }
                         </button>
                     </nav>
@@ -54,14 +57,14 @@ export const Navbar = () => {
                 {menuOpen && (<nav className="md:hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                     {
                         navbarConstant.map((itemNavbar, i) => (
-                            <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} />
+                            <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} Icon={itemNavbar.Icon}/>
                         ))
                     }
                     <button onClick={handleTheme}>
                         {!darkMode ?
-                            <ThemeIconMiniComponent theme='Dark mode' themeIcon={moonDark} />
+                            <ThemeIconMiniComponent theme='Dark mode' ThemeIcon={MdDarkMode} />
                             :
-                            <ThemeIconMiniComponent theme='Light mode' themeIcon={moonLight} />
+                            <ThemeIconMiniComponent theme='Light mode' ThemeIcon={BsSun} />
                         }
                     </button>
                 </nav>)

@@ -1,4 +1,6 @@
+import { IconType } from "react-icons";
+
 export interface Theme{
     theme:string |"",
-    themeIcon: string
+    ThemeIcon: IconType
 }
