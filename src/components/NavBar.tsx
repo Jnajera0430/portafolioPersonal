@@ -9,6 +9,7 @@ import { ThemeIconMiniComponent } from '../miniComponent/Theme.mini';
 import { MdDarkMode } from 'react-icons/md'
 import { BsSun } from 'react-icons/bs'
 import { ItemNavbarMiniComponentDesk } from '../miniComponent/NavbarDesk.mini';
+import { ThemeIconMiniComponentMob } from '../miniComponent/Theme.miniMobile';
 export const Navbar = () => {
     const { handleChangeTheme, darkMode } = UseContext();
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -31,7 +32,7 @@ export const Navbar = () => {
                         <span className={`${darkMode ? " text-slate-400" : " "} ml-3 -mt-1 text-sm`}>Desarrolador fullstack</span>
                     </div>
                 </a>
-                <div className='hidden md:block'>   
+                <div className='hidden md:block'>
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                         {
                             navbarConstant.map((itemNavbar, i) => (
@@ -54,21 +55,23 @@ export const Navbar = () => {
                     ☰
                 </button>
 
-                {menuOpen && (<nav className="md:hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-                    {
-                        navbarConstant.map((itemNavbar, i) => (
-                            <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} Icon={itemNavbar.Icon}/>
-                        ))
-                    }
-                    <button onClick={handleTheme}>
-                        {!darkMode ?
-                            <ThemeIconMiniComponent theme='Dark mode' ThemeIcon={MdDarkMode} />
-                            :
-                            <ThemeIconMiniComponent theme='Light mode' ThemeIcon={BsSun} />
+                {menuOpen && (
+                    <nav className="md:hidden md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-evenly w-full">
+                        {
+                            navbarConstant.map((itemNavbar, i) => (
+                                <ItemNavbarMiniComponent item={itemNavbar.item} src={itemNavbar.src} key={i} Icon={itemNavbar.Icon} />
+                            ))
                         }
-                    </button>
-                </nav>)
-                } 
+
+                    </nav>)
+                }
+                <button onClick={handleTheme} className='md:hidden fixed -right-0 items-center justify-center mt-4 mr-6'>
+                    {!darkMode ?
+                        <ThemeIconMiniComponentMob theme='Dark mode' ThemeIcon={MdDarkMode} />
+                        :
+                        <ThemeIconMiniComponentMob theme='Light mode' ThemeIcon={BsSun} />
+                    }
+                </button>
             </div>
         </header>
     )
