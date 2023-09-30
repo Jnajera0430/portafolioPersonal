@@ -26,7 +26,7 @@ export const Navbar = () => {
                 width: "100vw"
             }}>
                 <a className="flex title-font font-medium text-gray-900 mb-4 md:mb-0 md:content-start xl:items-center">
-                    <img src={avatarImg} className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" alt="" />
+                    <img src={avatarImg} className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" alt="Avatar Jose najera" />
                     <div className='flex flex-col justify-center items-start'>
                         <span className={`${darkMode ? " text-slate-400" : " "} ml-3 text-xl`}>Jose Najera A.</span>
                         <span className={`${darkMode ? " text-slate-400" : " "} ml-3 -mt-1 text-sm`}>Desarrolador fullstack</span>

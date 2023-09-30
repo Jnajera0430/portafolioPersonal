@@ -17,7 +17,7 @@ export const AboutComponent = () => {
                     <h1 className={`${darkMode ? " text-slate-300" : " text-gray-900"}  sm:text-3xl text-2xl font-medium title-font mb-2 `}>Acerca de mi</h1>
                     <div className=''>
                         <div className="mt-3 flex -space-x-2 overflow-hidden w-40">
-                            <img src={perfilImg} alt="" className="h-full w-full inline-block rounded-full ring-inset ring-white" />
+                            <img src={perfilImg} alt="Foto de perfil Jose Najera" className="h-full w-full inline-block rounded-full ring-inset ring-white" />
                         </div>
                         <div>
                             <h3 className={`${darkMode ? " text-slate-300" : " text-gray-900"} text-xl`}>Jose Najera Avendaño</h3>
