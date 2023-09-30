@@ -8,7 +8,7 @@ export interface IContext {
     typeAlert?: TypeAlert,
     handleTypeAlert: (type: TypeAlert) => void,
     isOpen?: boolean | null,
-    handleIsOpen: (state:boolean) => void
+    handleIsOpen: (state: boolean) => void
 }
 const data = localStorage.getItem(itemTheme);
 export const Context = createContext<IContext | null>({
@@ -37,7 +37,7 @@ export const ContextProvider = (props: PropsWithChildren) => {
         setTypeAlert(type);
     }
 
-    const handleIsOpen = (state:boolean) => {
+    const handleIsOpen = (state: boolean) => {
         setIsOpen(state);
     }
 
