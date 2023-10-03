@@ -72,7 +72,7 @@ export const AboutComponent = () => {
                 </a> */}
             <div className="flex flex-col md:w-1/2 md:pl-12 justify-center items-center">
                 <h2 className={`title-font font-semibold ${darkMode ? " text-slate-300" : " text-gray-900"} tracking-wider text-sm mb-3`}>TECNOLOGIAS - CONOCIMIENTOS</h2>
-                <ul className="flex flex-wrap list-none -mb-1 items-center justify-center">
+                <ul className="flex flex-wrap list-none -mb-1 items-center justify-start">
                     {
 
                         listTech.map((item, i) => (

@@ -63,5 +63,26 @@ export const listTech: ITech[] = [
         src: 'https://img.shields.io/badge/tailwind-%2320232a.svg?style=for-the-badge&logo=tailwindcss&logoColor=cyan',
         description:'Imagen logo de framework de css TailWinds'
     },
+    {
+        name: '',
+        src: 'https://img.shields.io/badge/Amazon services-%2320232a.svg?logo=amazonaws&logoColor=orange&style=for-the-badge',
+        description:'Imagen servicios amazon'
+    },
+    {
+        name: '',
+        src: 'https://camo.githubusercontent.com/8343fac9f847924f1b065027914ca66ff80e8857526b7561e559a09013a18e81/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d416d617a6f6e2b45433226636f6c6f723d323232323232266c6f676f3d416d617a6f6e2b454332266c6f676f436f6c6f723d464639393030266c6162656c3d',
+        description:'Imagen servicios amazon'
+    },
 
+    {
+        name: '',
+        src: 'https://img.shields.io/badge/amazon S3-%2320232a.svg?style=for-the-badge&logo=amazons3&logoColor=orange',
+        description:'Imagen servicios de aws'
+    },
+
+    {
+        name: '',
+        src: 'https://img.shields.io/badge/vercel-%2320232a.svg?style=for-the-badge&logo=vercel&logoColor=fff',
+        description:'dezplegar proyectos en vercel'
+    },
 ]
