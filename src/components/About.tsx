@@ -1,7 +1,7 @@
-import perfilImg from '../assets/img/perfil.jpg';
+import perfilImg from '../assets/img/perfil.webp';
 import flagColombia from '../assets/img/flagColombia.png';
 import flagColombiaDark from '../assets/img/flagColombiaDark2.png';
-import devImg from '../assets/img/Addcolorrafiki.png';
+import devImg from '../assets/img/addcolorrafiki.webp';
 import { listTech } from '../constants/tecnologies.constant';
 import { ListTechComponent } from '../miniComponent/ListTech.mini';
 import { UseContext } from '../api/hook/UseContext';
@@ -14,10 +14,10 @@ export const AboutComponent = () => {
         <div className="container flex flex-wrap px-5 pt-5 mx-auto items-center justify-center">
             <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200 flex">
                 <div className='xl:w-3/5 md:w-3/5'>
-                    <h1 className={`${darkMode ? " text-slate-300" : " text-gray-900"}  sm:text-3xl text-2xl font-medium title-font mb-2 `}>Acerca de mi</h1>
+                    <h2 className={`${darkMode ? " text-slate-300" : " text-gray-900"}  sm:text-3xl text-2xl font-medium title-font mb-2 `}>Acerca de mi</h2>
                     <div className=''>
                         <div className="mt-3 flex -space-x-2 overflow-hidden w-40">
-                            <img src={perfilImg} alt="Foto de perfil Jose Najera" className="h-full w-full inline-block rounded-full ring-inset ring-white" />
+                            <img src={perfilImg} alt="Foto de perfil de José Nájera, desarrollador full stack" className="h-full w-full inline-block rounded-full ring-inset ring-white" loading="lazy" decoding="async" />
                         </div>
                         <div>
                             <h3 className={`${darkMode ? " text-slate-300" : " text-gray-900"} text-xl`}>Jose Najera Avendaño</h3>
@@ -60,7 +60,7 @@ export const AboutComponent = () => {
                     </div>
                 </div>
                 <div className='xl:w-2/3 md:w-2/3 hidden sm:block'>
-                    <img src={devImg} className='w-full h-full' alt="Imagen obtenida de https://storyset.com/" />
+                    <img src={devImg} className='w-full h-full' alt="Ilustración de programación, obtenida de https://storyset.com/" loading="lazy" decoding="async" />
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ export const AboutComponent = () => {
                     {
 
                         listTech.map((item, i) => (
-                            <ListTechComponent name={item.name} src={item.src} description={item.description} key={i} />
+                            <ListTechComponent name={item.name} Icon={item.Icon} color={item.color} description={item.description} key={i} />
                         ))
                     }
                 </ul>

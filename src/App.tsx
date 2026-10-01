@@ -22,14 +22,14 @@ function App() {
       handleIsOpen(false);
     }, time)
     return () => clearTimeout(idTimer)
-  }, [typeAlert]);
+  }, [typeAlert, handleIsOpen]);
 
   useEffect(()=>{
     if(!isOpen){
       handleTypeAlert(TypeAlert.NEUTRO);
     }
     return;
-  },[isOpen]);
+  },[isOpen, handleTypeAlert]);
   return (
     <div >
       <div>

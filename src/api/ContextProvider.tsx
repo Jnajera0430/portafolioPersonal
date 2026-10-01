@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useState, useEffect } from "react"
+import { PropsWithChildren, createContext, useState, useEffect, useCallback } from "react"
 import { itemTheme } from "../constants/theme.constant";
 import { TypeAlert } from "../constants/alertEnum";
 export interface IContext {
@@ -10,7 +10,11 @@ export interface IContext {
     isOpen?: boolean | null,
     handleIsOpen: (state: boolean) => void
 }
-const data = localStorage.getItem(itemTheme);
+const readStoredTheme = (): boolean => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem(itemTheme);
+    return stored !== null ? JSON.parse(stored) : false;
+};
 export const Context = createContext<IContext | null>({
     darkMode: null,
     handleChangeTheme: () => { },
@@ -19,7 +23,11 @@ export const Context = createContext<IContext | null>({
 });
 export const ContextProvider = (props: PropsWithChildren) => {
 
-    const [darkMode, setDarkMode] = useState(data !== null ? JSON.parse(data) : false)
+    const [darkMode, setDarkMode] = useState<boolean>(false)
+
+    useEffect(() => {
+        setDarkMode(readStoredTheme());
+    }, []);
     const [typeAlert, setTypeAlert] = useState<TypeAlert>()
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -33,13 +41,13 @@ export const ContextProvider = (props: PropsWithChildren) => {
         setDarkMode(!darkMode);
     }
 
-    const handleTypeAlert = (type: TypeAlert) => {
+    const handleTypeAlert = useCallback((type: TypeAlert) => {
         setTypeAlert(type);
-    }
+    }, []);
 
-    const handleIsOpen = (state: boolean) => {
+    const handleIsOpen = useCallback((state: boolean) => {
         setIsOpen(state);
-    }
+    }, []);
 
     useEffect(() => {
         const data = localStorage.getItem(itemTheme);

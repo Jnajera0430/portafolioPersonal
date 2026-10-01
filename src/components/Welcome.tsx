@@ -8,8 +8,11 @@ export const WelcomeComponet = () => {
         flex-wrap">
             <div className="xl:w-3/5 md:w-3/5 sm:w-full h-auto ">
                 <h1 className={`${darkMode ? " text-slate-300" :" text-gray-900"} text-5xl mb-2 `}>
-                    Bienvenidos
+                    José Nájera — Desarrollador Full Stack
                 </h1>
+                <p className="text-xl mt-2">
+                    Portafolio de proyectos y experiencia laboral en Barranquilla, Colombia.
+                </p>
                 <p className='text-1xl font-bold font-serif'>
                     "En un mundo impulsado por la tecnología, el software es el lenguaje universal de la innovación".
                 </p>

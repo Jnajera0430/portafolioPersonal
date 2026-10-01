@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jnajera0430.github.io/portafolioPersonal/sitemap.xml

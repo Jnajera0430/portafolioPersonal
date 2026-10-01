@@ -4,4 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  ssr: {
+    noExternal: ['react-icons'],
+  },
+  ssgOptions: {
+    entry: 'src/main.tsx',
+    script: 'async',
+    formatting: 'none',
+  },
 })
