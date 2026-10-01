@@ -20,7 +20,7 @@ export const navbarConstant: INavbar[] = [
         Icon: ImProfile
     },
     {
-        item: 'Experiencia',
+        item: 'Proyectos',
         src: '#experence',
         Icon: IoCodeWorkingSharp
     },

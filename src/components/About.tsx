@@ -56,6 +56,9 @@ export const AboutComponent = () => {
                                     <img src={darkMode ? flagColombiaDark : flagColombia} alt="Bandera de Colombia" className='h-full w-full  rounded-full bg-none' />
                                 </div>
                             </div>
+                            <p className={`mt-4 text-sm leading-relaxed max-w-md ${darkMode ? " text-slate-400" : " text-gray-600 "}`}>
+                                Desarrollador fullstack con enfoque en React, Node.js (NestJS), Django, arquitecturas serverless y bases de datos relacionales y no relacionales. Apasionado por la integración de herramientas de IA como GitHub Copilot y Cursor para optimizar y acelerar el ciclo de desarrollo. Experiencia construyendo APIs eficientes, sistemas de mensajería, procesamiento en segundo plano y soluciones basadas en arquitectura de eventos, con técnicas full stack de integración y despliegue continuo (CI/CD).
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +79,7 @@ export const AboutComponent = () => {
                     {
 
                         listTech.map((item, i) => (
-                            <ListTechComponent name={item.name} Icon={item.Icon} color={item.color} description={item.description} key={i} />
+                            <ListTechComponent name={item.name} Icon={item.Icon} color={item.color} darkColor={item.darkColor} description={item.description} key={i} />
                         ))
                     }
                 </ul>

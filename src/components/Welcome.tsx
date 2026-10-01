@@ -11,7 +11,7 @@ export const WelcomeComponet = () => {
                     José Nájera — Desarrollador Full Stack
                 </h1>
                 <p className="text-xl mt-2">
-                    Portafolio de proyectos y experiencia laboral en Barranquilla, Colombia.
+                    Especializado en React, NestJS, Django y arquitecturas serverless en AWS. Proyectos y experiencia laboral desde Barranquilla, Colombia.
                 </p>
                 <p className='text-1xl font-bold font-serif'>
                     "En un mundo impulsado por la tecnología, el software es el lenguaje universal de la innovación".
